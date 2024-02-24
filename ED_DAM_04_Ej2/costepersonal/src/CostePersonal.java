@@ -1,17 +1,23 @@
 public class CostePersonal {
 
-    static float CosteDelPersonal(Trabajador trabajadores[]) {
+    // primera letra del metodo cambiado a minuscula
+    static float costeDelPersonal(Trabajador trabajadores[]) {
         float costeFinal = 0;
+
         Trabajador trabajador;
-        for (int i = 0; y < trabajadores.length; i++) {
+        // cambio Y por i
+        for (int i = 0; i < trabajadores.length; i++) {
             trabajador = trabajadores[i];
-            if (trabajador.getTipoTrabajador() == Trabajador.DIRECTOR|| trabajador.getTipoTrabajador() == Trabajador.SUBDIRECTOR) {
+            // salto de linea para que ajuste al ancho
+            if (trabajador.getTipoTrabajador() == Trabajador.DIRECTOR ||
+                    trabajador.getTipoTrabajador() == Trabajador.SUBDIRECTOR) {
                 costeFinal += trabajador.getNomina();
             }
-            else
-            {
+            // apertura de la llave en la misma linea del else
+            else {
                 costeFinal += trabajador.getNomina() + (trabajador.getHorasExtras() * 20);
             }
         }
         return costeFinal;
     }
+}
